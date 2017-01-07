@@ -1,39 +1,8 @@
 
 // Table Reservations (DATA)
 // =============================================================
-var reservations = [{
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}];
-
-var waitlist = [{
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}];
+var reservations = [];
+var waitlist = [];
 
 function addReservation(object){
     // tells whether or not you got a table
