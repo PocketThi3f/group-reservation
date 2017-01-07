@@ -94,9 +94,10 @@ app.get("/api/allData", function(req, res) {
 app.post("/api/new", function(req, res) {
   var newReservation = req.body;
   // validate data
-  reservations.push(newReservation);
+  //reservations.push(newReservation);
+  var gotTable = data.addReservation(newReservation);
   var message;
-  if (reservations.length <= 5){
+  if (gotTable){
     message = "You got a table!";
   } else {
     message = "You are on the wait list.";
