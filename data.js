@@ -2,6 +2,7 @@
 // Table Reservations (DATA)
 // =============================================================
 var reservations = [];
+var waitlist = [];
 
 function addReservation(object){
     // tells whether or not you got a table
