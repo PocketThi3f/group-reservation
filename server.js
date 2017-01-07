@@ -16,42 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-/*
-// Table Reservations (DATA)
-// =============================================================
-var reservations = [{
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}, {
-  name: "test",
-  phone: "555-5555",
-  email: "jesseharold@gmail.com",
-  uniqueID: "jesseharold"
-}];
-*/
-
 // Routes
 // =============================================================
 
@@ -74,13 +38,11 @@ app.get("/reserve", function(req, res) {
 // ===================================
 
 app.get("/api/tables", function(req, res) {
-  //var firstFive = reservations.slice(0, 5);
   var firstFive = data.getReservation();
   res.json(firstFive);
 });
 
 app.get("/api/waitlist", function(req, res) {
-  //var waitlist = reservations.slice(5);
   var waitlist = data.getWaitlist();
   res.json(waitlist);
 });
@@ -94,7 +56,6 @@ app.get("/api/allData", function(req, res) {
 app.post("/api/new", function(req, res) {
   var newReservation = req.body;
   // validate data
-  //reservations.push(newReservation);
   var gotTable = data.addReservation(newReservation);
   var message;
   if (gotTable){
