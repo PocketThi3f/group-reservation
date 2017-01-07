@@ -4,24 +4,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-  <div class = 'container'>
-  	<div class = 'row'>
-		<div class = 'jumbotron'>
-			<h1 class = 'text-center'>
-				<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-				<span>Hot Restaurant</span>
-			</h1>
-			<h2 class = 'text-center'> 
-				<span>We only have 5 tables! Book your seat before they are all gone!</span>
-			</h2>
-			<h2 class = 'text-center'>
-				<a class = 'btn btn-primary btn-lg' href='#' role = 'button' id='viewTable'>View Tables</a>
-				<a class = 'btn btn-default btn-lg' href='#' role = 'button' id='makeRes'><span class = 'glyphicon glyphicon-home'></span></a>
-			</h2>
-		</div>
-	</div>
-		
-
+    <div class = 'container'>
+    	<div class = 'row'>
+  		<div class = 'jumbotron'>
+  			<h1 class = 'text-center'>
+  				<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+  				<span>Hot Restaurant</span>
+  			</h1>
+  			<h2 class = 'text-center'>
+  				<span>We only have 5 tables! Book your seat before they are all gone!</span>
+  			</h2>
+  			<h2 class = 'text-center'>
+  				<a class = 'btn btn-primary btn-lg' href='#' role = 'button' id='viewTable'>View Tables</a>
+  				<a class = 'btn btn-default btn-lg' href='#' role = 'button' id='makeRes'><span class = 'glyphicon glyphicon-home'></span></a>
+  			</h2>
+  		</div>
+  	</div>
 
 <!-- Reservation Page -->
 				<div class="panel panel-default">
@@ -59,8 +57,28 @@
 				</div>
 
 			</div>
-		
 		</div>
 
+    <script type="text/javascript">
+        // Input val.trim
+        $(".submit").on("click", function() {
+          var newReservation = {
+            name: $("#reserve_name").val().trim(),
+            phone: $("#reserve_phone").val().trim(),
+            email: $("#reserve_email").val().trim(),
+            id: $("#reserve_uniqueID").val().trim()
+          };
+
+    // Post to /api/new
+          $.post("http://localhost:3000/api/new", newReservation)
+          .done(function(data) {
+            console.log(data);
+            alert("Adding reservation...");
+          });
+
+          return false;
+        });
+      </script>
   </body>
+
 </html>
