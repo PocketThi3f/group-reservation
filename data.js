@@ -36,11 +36,15 @@ var waitlist = [{
 }];
 
 function addReservation(object){
+    // tells whether or not you got a table
+    var gotTable = true;
     if (reservations.length < 5) {
         reservations.push(object);
     } else {
         waitlist.push(object);
+        gotTable = false;
     }
+    return gotTable;
 }
 
 function getReservations(){
