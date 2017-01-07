@@ -78,7 +78,7 @@
           $.post("/api/new", newReservation)
           .done(function(data) {
             console.log(data);
-            alert("Adding reservation...");
+            alert(data);
           });
 
           return false;
